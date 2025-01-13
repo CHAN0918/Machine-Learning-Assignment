@@ -12,7 +12,9 @@ scaler = joblib.load(r'C:\Users\Lenovo\Desktop\Machine Learning\Assignment\scale
 
 # Manually define the expected feature names (the same as used during training)
 feature_names = [
-    'I may hit a person for no good reason', 'I get into fights a little more than a normal person', 'sometimes I can not control the feeling to hit another person '
+    'I may hit a person for no good reason',
+    'I get into fights a little more than a normal person',
+    'sometimes I can not control the feeling to hit another person '
 ]
 
 # Define the relevant behavior-related questions and options
@@ -29,14 +31,14 @@ user_responses = {}
 def ask_question(question, options, row):
     label = tk.Label(root, text=question)
     label.grid(row=row, column=0, sticky="w", padx=10, pady=5)
-    
+
     var = tk.StringVar(value=options[0])  # default value
     
     for option in options:
         radio_btn = tk.Radiobutton(root, text=option, variable=var, value=option)
         radio_btn.grid(row=row, column=1, sticky="w")
         row += 1
-    
+
     user_responses[question] = var
 
 # Create the main window
@@ -69,7 +71,7 @@ def make_prediction():
             user_input.append(response_mapping[answer])
         else:
             user_input.append(-1)  # For other unexpected answers
-
+    
     # Convert the input data into a DataFrame (for the model to process)
     input_data = pd.DataFrame([user_input], columns=feature_names)
 
