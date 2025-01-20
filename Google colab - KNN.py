@@ -1,16 +1,16 @@
 # Install libraries (if not already available)
-#!pip install pandas numpy matplotlib seaborn scikit-learn
+!pip install pandas numpy matplotlib seaborn scikit-learn
 
 # Import libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+import pickle
 
 from google.colab import files
 
@@ -49,17 +49,17 @@ print(removed_rows)
 # Manual Feature Selection
 # List of irrelevant features to exclude
 irrelevant_features = [
-    "What is your age?",
-    "Gender",
-    "Class",
-    "City/ Residencial status",
-    "Type of Family",
-    "Name the video game you usually play ",
-    "How many hours do you play Video Games in  a day?",
-    "When people are especially nice to me, I wonder what they want",
-    "Sometimes I feel people are laughing behind my back",
-    "I sometimes feel like exploding for no good reason",
-    "I am suspicious of strangers who are too friendly"
+ "What is your age?",
+ "Gender",
+"Class",
+ "City/ Residencial status",
+"Type of Family",
+ "Name the video game you usually play ",
+ "How many hours do you play Video Games in  a day?",
+ "When people are especially nice to me, I wonder what they want",
+ "Sometimes I feel people are laughing behind my back",
+ "I sometimes feel like exploding for no good reason",
+"I am suspicious of strangers who are too friendly"
 ]
 
 # Exclude irrelevant features from the cleaned dataset
@@ -97,7 +97,7 @@ relevant_features = correlation_matrix[target_column][correlation_matrix[target_
 
 # Exclude the target column from the feature set
 if target_column in relevant_features:
-    relevant_features.remove(target_column)
+  relevant_features.remove(target_column)
 
 print("\nRelevant Features Selected:")
 print(relevant_features)
